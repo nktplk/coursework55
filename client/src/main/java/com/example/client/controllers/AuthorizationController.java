@@ -184,6 +184,7 @@ public class AuthorizationController {
                 //button_SignIn.setDisable(false);
                 button_SignIn_High.setStyle("-fx-background-color: #595625; -fx-background-radius: 10; -fx-text-fill: #fafafa");
                 button_SignIn_High.toFront();
+                pane_SignIn.setVisible(true);
             }
             else {
                 label_ConnectionFailed.setVisible(true);

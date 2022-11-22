@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="anchorPane_Main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F2CB9B;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.controllers.AuthorizationController">
    <children>
-      <Pane fx:id="pane_SignIn" layoutX="500.0" layoutY="303.0" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: #F2A766; -fx-background-radius: 20;">
+      <Pane fx:id="pane_SignIn" layoutX="500.0" layoutY="303.0" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: #F2A766; -fx-background-radius: 20;" visible="false">
          <children>
             <TextField fx:id="textField_SignInLogin" layoutX="26.0" layoutY="89.0" promptText="Login">
                <font>
@@ -30,7 +30,7 @@
             <Label fx:id="label_SignInFailed" layoutX="64.0" layoutY="170.0" text="Sign in failed!" textFill="RED" visible="false" />
          </children>
       </Pane>
-      <Pane fx:id="pane_SignUp" layoutX="501.0" layoutY="303.0" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: #F2A766; -fx-background-radius: 20;">
+      <Pane fx:id="pane_SignUp" layoutX="501.0" layoutY="303.0" prefHeight="238.0" prefWidth="200.0" style="-fx-background-color: #F2A766; -fx-background-radius: 20;" visible="false">
          <children>
             <TextField fx:id="textField_SignUpLogin" layoutX="25.0" layoutY="72.0" promptText="Login">
                <font>
@@ -55,7 +55,7 @@
                </font></TextField>
          </children>
       </Pane>
-      <Button fx:id="button_SignIn_High" layoutX="507.0" layoutY="259.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="101.0" style="-fx-background-color: #F2CB9B; -fx-background-radius: 10;" text="Sign In" onAction="#actionOnButtonSignInHigh">
+      <Button fx:id="button_SignIn_High" layoutX="507.0" layoutY="259.0" mnemonicParsing="false" onAction="#actionOnButtonSignInHigh" prefHeight="23.0" prefWidth="101.0" style="-fx-background-color: #F2CB9B; -fx-background-radius: 10;" text="Sign In">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Button>
