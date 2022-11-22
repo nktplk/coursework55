@@ -8,9 +8,7 @@ import com.model.user.CurrentUser;
 import com.model.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,10 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-
-import java.io.IOException;
-
-public class ConnectionToServerController {
+public class AuthorizationController {
 
     @FXML
     private AnchorPane anchorPane_Main;
@@ -84,11 +79,42 @@ public class ConnectionToServerController {
     @FXML
     private TextField textField_SignUpRepeatPassword;
 
+    @FXML
+    private Button button_SignIn_High;
+
+    @FXML
+    private Button button_SignUp_High;
 
     private ConnectionManager connectionManager;
     private Scene secondScene;
     public void setSecondScene(Scene scene) {
         secondScene = scene;
+    }
+
+    @FXML
+    void actionOnButtonSignUpHigh(ActionEvent event) {
+        button_SignUp_High.setStyle("-fx-background-color: #595625; -fx-background-radius: 10; -fx-text-fill: #fafafa");
+        button_SignIn_High.setStyle("-fx-background-color: #F2CB9B; -fx-background-radius: 10;  -fx-text-fill: #000000");
+        new SlideOutLeft(pane_SignIn).play();
+        new SlideInLeft(pane_SignUp).play();
+        pane_SignIn.toBack();
+        pane_SignUp.toFront();
+        pane_SignIn.setVisible(false);
+        pane_SignUp.setVisible(true);
+        button_SignUp_High.toFront();
+    }
+
+    @FXML
+    void actionOnButtonSignInHigh(ActionEvent event) {
+        button_SignIn_High.setStyle("-fx-background-color: #595625; -fx-background-radius: 10; -fx-text-fill: #fafafa");
+        button_SignUp_High.setStyle("-fx-background-color: #F2CB9B; -fx-background-radius: 10;  -fx-text-fill: #000000");
+        new SlideOutLeft(pane_SignUp).play();
+        new SlideInLeft(pane_SignIn).play();
+        pane_SignUp.toBack();
+        pane_SignIn.toFront();
+        pane_SignUp.setVisible(false);
+        pane_SignIn.setVisible(true);
+        button_SignIn_High.toFront();
     }
 
     @FXML
@@ -152,9 +178,12 @@ public class ConnectionToServerController {
                 new SlideOutLeft(pane_Connection).play();
                 new SlideInLeft(pane_SignIn).play();
                 pane_Connection.toBack();
+                pane_Connection.setVisible(false);
                 pane_SignIn.toFront();
-                button_SignUp.setDisable(false);
-                button_SignIn.setDisable(false);
+                //button_SignUp.setDisable(false);
+                //button_SignIn.setDisable(false);
+                button_SignIn_High.setStyle("-fx-background-color: #595625; -fx-background-radius: 10; -fx-text-fill: #fafafa");
+                button_SignIn_High.toFront();
             }
             else {
                 label_ConnectionFailed.setVisible(true);

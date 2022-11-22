@@ -2,10 +2,7 @@ package com.example.client;
 
 
 import animatefx.animation.FadeIn;
-import com.example.client.connection.Connection;
-import com.example.client.controllers.ConnectionToServerController;
-import com.model.user.User;
-import com.hashing.JBCrypt;
+import com.example.client.controllers.AuthorizationController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,20 +16,20 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("connection-to-server-view.fxml"));
+//        fxmlLoader.setLocation(getClass().getResource("authorization.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        stage.setTitle("My App");
 //        stage.setScene(scene);
 //        stage.show();
         FXMLLoader firstPage = new FXMLLoader();
         FXMLLoader secondPage = new FXMLLoader();
-        firstPage.setLocation(getClass().getResource("connection-to-server-view.fxml"));
+        firstPage.setLocation(getClass().getResource("authorization.fxml"));
         secondPage.setLocation(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(firstPage.load(), 1200, 800);
         Parent secondPane = secondPage.load();
         Scene secondScene = new Scene(secondPane, 1200, 800);
 
-        ConnectionToServerController firstPaneController = (ConnectionToServerController) firstPage.getController();
+        AuthorizationController firstPaneController = (AuthorizationController) firstPage.getController();
         firstPaneController.setSecondScene(secondScene);
 
         stage.setTitle("MyApp");
