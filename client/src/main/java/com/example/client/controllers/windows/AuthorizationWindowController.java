@@ -12,15 +12,25 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.awt.event.KeyEvent;
 
 public class AuthorizationWindowController {
 
     @FXML
     private AnchorPane anchorPane_Main;
+
+    @FXML
+    private PasswordField textField_SignUpPassword;
+
+    @FXML
+    private PasswordField textField_SignUpRepeatPassword;
 
     @FXML
     private Button button_Connect;
@@ -67,20 +77,23 @@ public class AuthorizationWindowController {
     @FXML
     private TextField textField_SignInLogin;
 
-    @FXML
-    private TextField textField_SignInPassword;
+//    @FXML
+//    private TextField textField_SignInPassword;
 
     @FXML
     private TextField textField_SignUpLogin;
 
-    @FXML
-    private TextField textField_SignUpPassword;
-
-    @FXML
-    private TextField textField_SignUpRepeatPassword;
+//    @FXML
+//    private TextField textField_SignUpPassword;
+//
+//    @FXML
+//    private TextField textField_SignUpRepeatPassword;
 
     @FXML
     private Button button_SignIn_High;
+
+    @FXML
+    private PasswordField textField_SignInPassword;
 
     @FXML
     private Button button_editConnection;
@@ -97,6 +110,12 @@ public class AuthorizationWindowController {
     private Scene adminWindowScene;
     public void setAdminWindowScene(Scene scene) {
         adminWindowScene = scene;
+    }
+
+    @FXML
+    void initialize(){
+
+
     }
 
     @FXML
@@ -227,6 +246,8 @@ public class AuthorizationWindowController {
                 button_SignIn_High.setStyle("-fx-background-color: #595625; -fx-background-radius: 10; -fx-text-fill: #fafafa");
                 button_SignIn_High.toFront();
                 pane_SignIn.setVisible(true);
+                button_SignUp_High.setDisable(false);
+                button_SignIn_High.setDisable(false);
             }
             else {
                 label_ConnectionFailed.setVisible(true);

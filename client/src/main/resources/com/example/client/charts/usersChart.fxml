@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane_ERChart" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #F2CB9B;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.controllers.charts.UsersChartController">
+   <children>
+      <PieChart fx:id="pieChart_Pie" layoutX="14.0" layoutY="14.0" prefHeight="665.0" prefWidth="973.0" />
+      <Label layoutX="234.0" layoutY="666.0" prefHeight="112.0" prefWidth="532.0" text="Распределение пользователей по ролям" wrapText="true">
+         <font>
+            <Font name="Century Gothic" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

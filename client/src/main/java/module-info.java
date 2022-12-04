@@ -13,4 +13,5 @@ module com.example.client {
 
     requires importify;
     requires AnimateFX;
+    requires java.desktop;
 }

@@ -2,6 +2,7 @@ package com.example.client;
 
 
 import animatefx.animation.FadeIn;
+import com.example.client.connection.Connection;
 import com.example.client.controllers.windows.AdminWindowController;
 import com.example.client.controllers.windows.AuthorizationWindowController;
 import com.example.client.controllers.windows.MainWindowController;
@@ -55,6 +56,11 @@ public class HelloApplication extends Application {
         new FadeIn(mainWindowScene.getRoot()).play();
         new FadeIn(adminWindowScene.getRoot()).play();
 
+    }
+
+    @Override
+    public void stop() {
+        Connection.closeConnection();
     }
 
     public static void main(String[] args) {

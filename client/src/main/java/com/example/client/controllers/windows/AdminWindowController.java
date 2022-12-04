@@ -20,6 +20,9 @@ public class AdminWindowController {
     private Button button_Exit;
 
     @FXML
+    private Button button_Chart;
+
+    @FXML
     private Button button_tableUsers;
 
     private Scene authorizationWindowScene;
@@ -31,6 +34,20 @@ public class AdminWindowController {
     protected void onExitButtonClick(ActionEvent event) {
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(authorizationWindowScene);
+    }
+
+    @FXML
+    protected void onChartButtonClick(ActionEvent event) {
+        FXMLLoader object = new FXMLLoader();
+        object.setLocation(getClass().getResource("/com/example/client/charts/usersChart.fxml"));
+        Pane view = null;
+        try {
+            view = object.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        borderPane_Admin.setCenter(view);
+        borderPane_Admin.toFront();
     }
 
     @FXML

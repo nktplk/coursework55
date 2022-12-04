@@ -35,12 +35,23 @@ public class Connection {
             resumesManager = new ResumesManager(resumesSocket);
             usersManager = new UsersManager(usersSocket);
             //messageManager = new MessageManager(messageSocket);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public static void closeConnection(){
+        try {
+            connectionManager.closeConnection();
+            departmentsManager.closeConnection();
+            SchedulesManager.closeConnection();
+            employeesManager.closeConnection();
+            resumesManager.closeConnection();
+            usersManager.closeConnection();
+        } catch (Exception e) {
+
+        }
+    }
     public void startEnd() {
         System.out.println("hello");
     }

@@ -40,6 +40,7 @@ public class ServerController {
 
 
 
+
                 case "addEmployee":
                     System.out.println("addEmployee");
                     Operations.AddEmployee((EmployeeAdd)connectionManager.readObject(), this.dbHandler);
@@ -131,9 +132,11 @@ public class ServerController {
                     System.out.println("updateUser");
                     Operations.UpdateUser((UserTable)connectionManager.readObject(), this.dbHandler);
                     break;
-
-
-
+                case "close":
+                    System.out.println("close");
+                    connectionManager.close();
+                    message = null;
+                    break;
                 default:
                     System.out.println("not " + message);
                     break;
