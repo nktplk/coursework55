@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #F2A766;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.controllers.windows.AdminWindowController">
+   <children>
+      <BorderPane fx:id="borderPane_Admin" layoutX="200.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #F2CB9B;" />
+      <Button fx:id="button_tableUsers" onAction="#onTableUsersButtonClick" layoutX="36.0" layoutY="46.0" mnemonicParsing="false" style="-fx-background-color: #F2A766;" text="Пользователи" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_Exit" layoutX="65.0" layoutY="750.0" mnemonicParsing="false" onAction="#onExitButtonClick" style="-fx-background-color: #F2A766;" text="Выход" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

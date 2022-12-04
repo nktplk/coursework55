@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="anchorPane_Employees" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.controllers.table.EmployeesTableController">
+   <children>
+      <TableView fx:id="tableView_Employees" layoutX="14.0" layoutY="65.0" prefHeight="454.0" prefWidth="521.0">
+        <columns>
+          <TableColumn fx:id="tableColumn_ID" prefWidth="51.0" text="ID" />
+          <TableColumn fx:id="tableColumn_Name" prefWidth="140.0" text="Name" />
+            <TableColumn fx:id="tableColumn_Department" prefWidth="139.0" text="Department" />
+            <TableColumn fx:id="tableColumn_IDResume" prefWidth="106.0" text="ID Resume" />
+            <TableColumn fx:id="tableColumn_Skills" prefWidth="84.0" text="Skills" />
+        </columns>
+      </TableView>
+      <Label fx:id="label_Search" layoutX="14.0" layoutY="31.0" text="Поиск по таблице">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textField_Search" layoutX="131.0" layoutY="26.0" promptText="Введите параметр">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textField_Name" layoutX="588.0" layoutY="262.0" promptText="Name">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="textField_Department" layoutX="588.0" layoutY="315.0" promptText="Department">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="button_Add" layoutX="153.0" layoutY="546.0" mnemonicParsing="false" text="Add" onAction="#addData">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_Edit" disable="true" layoutX="215.0" layoutY="546.0" mnemonicParsing="false" text="Edit">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_Delete" disable="true" layoutX="273.0" layoutY="546.0" mnemonicParsing="false" text="Delete">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_Clear" layoutX="348.0" layoutY="546.0" mnemonicParsing="false" text="Clear">
+         <font>
+            <Font name="Century Gothic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
