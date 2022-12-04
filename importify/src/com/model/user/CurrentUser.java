@@ -9,7 +9,7 @@ public class CurrentUser extends User implements Serializable {
     //private Country country;
     private String lastAccessDate;
 
-    private CurrentUser(String login, String password/*, Country country*/, String role) {
+    private CurrentUser(String login, String password, String role) {
         super(login, password, role);
         //this.country = country;
     }
@@ -36,7 +36,7 @@ public class CurrentUser extends User implements Serializable {
 
     public static CurrentUser getInstance(User user) {//(String login, String password, String country, String role) {
         if (instance == null && user != null) {
-            instance = new CurrentUser(user.login, user.password/*, user.country*/, user.role);
+            instance = new CurrentUser(user.login, user.password, user.role);
         }
         return instance;
     }
@@ -48,5 +48,6 @@ public class CurrentUser extends User implements Serializable {
     public static void nullInstance() {
         instance = null;
     }
+
 }
 

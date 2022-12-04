@@ -2,7 +2,9 @@ package com.example.client;
 
 
 import animatefx.animation.FadeIn;
-import com.example.client.controllers.AuthorizationController;
+import com.example.client.controllers.windows.AdminWindowController;
+import com.example.client.controllers.windows.AuthorizationWindowController;
+import com.example.client.controllers.windows.MainWindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,28 +18,42 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("authorization.fxml"));
+//        fxmlLoader.setLocation(getClass().getResource("authorizationWindow.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        stage.setTitle("My App");
 //        stage.setScene(scene);
 //        stage.show();
-        FXMLLoader firstPage = new FXMLLoader();
-        FXMLLoader secondPage = new FXMLLoader();
-        firstPage.setLocation(getClass().getResource("authorization.fxml"));
-        secondPage.setLocation(getClass().getResource("hello-view.fxml"));
-        Scene scene = new Scene(firstPage.load(), 1200, 800);
-        Parent secondPane = secondPage.load();
-        Scene secondScene = new Scene(secondPane, 1200, 800);
+        FXMLLoader authorizationWindowPage = new FXMLLoader();
+        FXMLLoader mainWindowPage = new FXMLLoader();
+        FXMLLoader adminWindowPage = new FXMLLoader();
 
-        AuthorizationController firstPaneController = (AuthorizationController) firstPage.getController();
-        firstPaneController.setSecondScene(secondScene);
+        authorizationWindowPage.setLocation(getClass().getResource("/com/example/client/windows/authorizationWindow.fxml"));
+        mainWindowPage.setLocation(getClass().getResource("/com/example/client/windows/mainWindow.fxml"));
+        adminWindowPage.setLocation(getClass().getResource("/com/example/client/windows/adminWindow.fxml"));
+
+        Scene authorizationWindowScene = new Scene(authorizationWindowPage.load(), 1200, 800);
+        //Parent mainWindowPane = mainWindowPage.load();
+        //Parent adminWindowPane = adminWindowPage.load();
+        Scene mainWindowScene = new Scene(mainWindowPage.load(), 1200, 800);
+        Scene adminWindowScene = new Scene(adminWindowPage.load(), 1200, 800);
+
+        AuthorizationWindowController mainWindowFromAuthorizationWindowPaneController = (AuthorizationWindowController) authorizationWindowPage.getController();
+        mainWindowFromAuthorizationWindowPaneController.setMainWindowScene(mainWindowScene);
+        mainWindowFromAuthorizationWindowPaneController.setAdminWindowScene(adminWindowScene);
+
+        MainWindowController authorizationWindowFromMainWindowPaneController = (MainWindowController) mainWindowPage.getController();
+        authorizationWindowFromMainWindowPaneController.setAuthorizationWindowScene(authorizationWindowScene);
+
+        AdminWindowController authorizationWindowFromAdminWindowPaneController = (AdminWindowController) adminWindowPage.getController();
+        authorizationWindowFromAdminWindowPaneController.setAuthorizationWindowScene(authorizationWindowScene);
 
         stage.setTitle("MyApp");
-        stage.setScene(scene);
+        stage.setScene(authorizationWindowScene);
         stage.show();
 
-        new FadeIn(scene.getRoot()).play();
-        new FadeIn(secondScene.getRoot()).play();
+        new FadeIn(authorizationWindowScene.getRoot()).play();
+        new FadeIn(mainWindowScene.getRoot()).play();
+        new FadeIn(adminWindowScene.getRoot()).play();
 
     }
 
